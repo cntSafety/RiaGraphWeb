@@ -1,0 +1,68 @@
+the_embedded_graph_database: THE EMBEDDED GRAPH DATABASE
+see_the_whole: See the whole
+connection: connection.
+riagraph_brings_connected_data_into_your_applica: RiaGraph brings connected data into your application.
+  Query relationships with Cypher, explore complex patterns, and keep your graph close to your code.
+explore_documentation: Explore documentation
+view_on_github: View on GitHub
+open_source: 'OPEN SOURCE '
+symbol: ·
+embedded: ' EMBEDDED '
+symbol_2: ·
+cypher: ' CYPHER'
+a: A
+b: B
+c: C
+d: D
+relationships: RELATIONSHIPS
+make_the_data: make the data.
+built_for_connected_thinking: BUILT FOR CONNECTED THINKING
+from_individual_records_to_the_relationships_tha: From individual records to the relationships that give
+  them meaning.
+why_riagraph: WHY RIAGRAPH
+a_graph_database_that: A graph database that
+fits_your_application: fits your application.
+model_the_world_as_nodes_and_relationships_then: Model the world as nodes and relationships, then ask
+  questions that follow the connections.
+symbol_3: ✳
+embedded_by_design: Embedded by design
+run_the_database_within_your_application_without: Run the database within your application, without operating
+  a separate database server.
+symbol_4: ⌘
+expressive_queries: Expressive queries
+use_cypher_to_describe_graph_patterns_filter_res: Use Cypher to describe graph patterns, filter results,
+  and transform connected data.
+symbol_5: ◈
+built_for_analysis: Built for analysis
+columnar_storage_graph_oriented_indexes_and_a_ve: Columnar storage, graph-oriented indexes and a vectorized
+  query processor support analytical workloads.
+from_pattern_to_answer: FROM PATTERN TO ANSWER
+ask_how_things: Ask how things
+are_connected: are connected.
+move_naturally_from_entities_to_the_relationship: Move naturally from entities to the relationships between
+  them. Cypher makes the shape of a question visible in the query itself.
+open_the_cypher_cheat_sheet: Open the Cypher cheat sheet
+cypher_2: CYPHER
+match_person_person_knows_friend_person_where_pe: 'MATCH (person:Person)-[:KNOWS]->(friend:Person)
+
+  WHERE person.name = ''Ada''
+
+  RETURN friend.name
+
+  ORDER BY friend.name;'
+made_to_be_understood: MADE TO BE UNDERSTOOD
+more_control_over: More control over
+your_graph: your graph.
+namespaces: Namespaces
+organize_nodes_and_relationships_into_logical_gr: Organize nodes and relationships into logical groups
+  and scope queries to the data you need.
+learn_about_namespaces: Learn about namespaces
+assert: ASSERT
+state_the_conditions_your_query_expects_and_fail: State the conditions your query expects and fail the
+  statement when they do not hold.
+learn_about_assert: Learn about ASSERT
+get_started: GET STARTED
+ready_to_connect_the_dots: Ready to connect the dots?
+build_from_source_or_explore_the_release_artifac: Build from source or explore the release artifacts,
+  then start asking better questions of your data.
+get_started_2: Get started

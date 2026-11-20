@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="wrap doc-head"><p class="eyebrow">{{ page.eyebrow }}</p><h1>{{ page.heading }}<br><em>{{ page.heading_em }}</em></h1><p class="lede">{{ page.intro }}</p></section>
+<div class="wrap doc-layout"><aside><strong>ON THIS PAGE</strong>{% for item in NAVIGATION[page.slug] %}<a href="#{{ item.id }}">{{ item.label }}</a>{% endfor %}</aside><div class="prose">{{ page.content }}</div></div>
+{% endblock %}
