@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="RiaGraph is an embedded graph database for connected data."><title>Cypher cheat sheet | RiaGraph</title><link rel="stylesheet" href="style.css"></head><body><header><a class="brand" href="index.html"><img src="riacore.png" alt=""><span>Ria<span>Graph</span></span></a><nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="docs.html">Documentation</a><a href="cheatsheet.html">Cypher cheat sheet</a><a href="https://github.com/cntSafety/RiaGraph">GitHub</a></nav></header><main><section class="wrap doc-head"><p class="eyebrow">A PRACTICAL REFERENCE</p><h1>Cypher,<br><em>at a glance.</em></h1><p class="lede">Common patterns for creating, querying, and updating a property graph in RiaGraph.</p></section><div class="wrap doc-layout"><aside><strong>ON THIS PAGE</strong><a href="#schema">Schema</a><a href="#create">Create</a><a href="#match">Match</a><a href="#shape">Shape results</a><a href="#update">Update &amp; delete</a><a href="#scope">Namespaces &amp; assertions</a></aside><div class="prose"><section id="schema"><h2>Define a schema</h2><p>Create node and relationship tables before adding data.</p><pre><code>CREATE NODE TABLE Person(id INT64, name STRING, PRIMARY KEY(id));
+CREATE REL TABLE Knows(FROM Person TO Person);</code></pre></section><section id="create"><h2>Create data</h2><pre><code>CREATE (:Person {id: 1, name: &#x27;Ada&#x27;});
+CREATE (:Person {id: 2, name: &#x27;Lin&#x27;});
+MATCH (a:Person {id: 1}), (b:Person {id: 2})
+CREATE (a)-[:Knows]-&gt;(b);</code></pre></section><section id="match"><h2>Match patterns</h2><pre><code>MATCH (p:Person)
+WHERE p.name = &#x27;Ada&#x27;
+RETURN p.id, p.name;
+
+MATCH (a:Person)-[:Knows]-&gt;(b:Person)
+RETURN a.name, b.name;</code></pre><p>Use parameters such as <code>$name</code> for values supplied by your application.</p></section><section id="shape"><h2>Shape results</h2><pre><code>MATCH (p:Person)
+RETURN p.name ORDER BY p.name LIMIT 10;
+
+MATCH (p:Person) RETURN count(*) AS people;
+
+UNWIND [1, 2, 3] AS value RETURN value;</code></pre></section><section id="update"><h2>Update and delete</h2><pre><code>MATCH (p:Person {id: 1}) SET p.name = &#x27;Ada Lovelace&#x27;;
+MATCH (p:Person {id: 2}) DETACH DELETE p;</code></pre><p><code>DETACH DELETE</code> removes incident relationships as well as the matched node.</p></section><section id="scope"><h2>Namespaces &amp; assertions</h2><pre><code>CREATE NAMESPACE team_a;
+USE NAMESPACE team_a;
+MATCH (p:Person) ASSERT count(*) &gt; 0 AS &#x27;Expected people&#x27;
+RETURN p.name;
+USE NAMESPACE ALL NAMESPACES;</code></pre><p>See the <a href="docs.html#namespaces">namespace</a> and <a href="docs.html#assert">ASSERT</a> guides for scope and transaction semantics.</p></section></div></div></main><footer><div><strong>RiaGraph</strong><p>Connected data, thoughtfully engineered.</p></div><div><a href="docs.html">Documentation</a><a href="cheatsheet.html">Cypher cheat sheet</a><a href="https://github.com/cntSafety/RiaGraph">Source on GitHub</a></div><small>RiaGraph is a fork of Ladybug, which is a fork of Kùzu.</small></footer></body></html>
